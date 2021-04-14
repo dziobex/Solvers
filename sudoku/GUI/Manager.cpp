@@ -111,8 +111,9 @@ void Manager::Loop(sf::RenderWindow& window) {
 				int grid[9][9]{};
 				// the numbers from the fields are copied to the solver's grid //
 				for (int i = 0; i < 9; ++i)
-					for (int j = 0; j < 9; ++j)
-						solver.grid[i][j] = fields[j][i].number;
+					for (int j = 0; j < 9; ++j) {
+						grid[i][j] = fields[j][i].number;
+					}
 				if (!solver.Initialize(grid)) {
 					statusText.setString("Status: Unsolvable");
 					statusText.setFillColor(sf::Color::Red);
