@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ADCAD6F4-D6F8-48F6-B90A-56E9729B1AFB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>skyscraperapp</RootNamespace>
+    <AssemblyName>Skyscraper Solver</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>skyscraper.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="4x4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="4x4.Designer.cs">
+      <DependentUpon>4x4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="5x5.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="5x5.Designer.cs">
+      <DependentUpon>5x5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="6x6.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="6x6.Designer.cs">
+      <DependentUpon>6x6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="7x7.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="7x7.Designer.cs">
+      <DependentUpon>7x7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="8x8.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="8x8.Designer.cs">
+      <DependentUpon>8x8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Solvable.cs" />
+    <Compile Include="Solver\Skyscraper.cs" />
+    <EmbeddedResource Include="4x4.resx">
+      <DependentUpon>4x4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5x5.resx">
+      <DependentUpon>5x5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6x6.resx">
+      <DependentUpon>6x6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="7x7.resx">
+      <DependentUpon>7x7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="8x8.resx">
+      <DependentUpon>8x8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="skyscraper.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
